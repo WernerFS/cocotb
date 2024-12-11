@@ -628,7 +628,7 @@ class RegressionManager:
         # log test results
         hilight_start = _ANSI.COLOR_SKIPPED if want_color_output() else ""
         hilight_end = _ANSI.COLOR_DEFAULT if want_color_output() else ""
-        self.log.info(
+        self.log.debug(
             "%sskipping%s %s (%d/%d)%s",
             hilight_start,
             hilight_end,
@@ -726,7 +726,7 @@ class RegressionManager:
             result_was = ""
         else:
             result_was = f" (result was {type(result).__qualname__})"
-        self.log.info(
+        self.log.debug(
             "%s %spassed%s%s%s",
             self._test.fullname,
             start_hilight,
@@ -776,7 +776,7 @@ class RegressionManager:
             rest = ""
         else:
             rest = f": {msg}"
-        self.log.info(
+        self.log.debug(
             "%s %sfailed%s%s",
             self._test.fullname,
             start_hilight,
