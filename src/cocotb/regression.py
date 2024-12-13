@@ -594,7 +594,7 @@ class RegressionManager:
         """Called by :meth:`_execute` to log that a test is starting."""
         hilight_start = _ANSI.COLOR_TEST if want_color_output() else ""
         hilight_end = _ANSI.COLOR_DEFAULT if want_color_output() else ""
-        self.log.info(
+        self.log.debug(
             "%srunning%s %s (%d/%d)%s",
             hilight_start,
             hilight_end,
